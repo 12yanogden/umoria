@@ -235,7 +235,7 @@ dependencies = [
 
 [[package]]
 name = "umoria"
-version = "5.7.16"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "directories",
