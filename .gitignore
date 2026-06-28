@@ -1,5 +1,10 @@
 .idea
 
+# Rust / Cargo
+/target/
+**/target/
+**/*.rs.bk
+
 # CMake
 Makefile
 CMakeCache.txt
