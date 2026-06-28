@@ -16,7 +16,7 @@ Or from GitHub releases:
 
 ```sh
 curl --proto '=https' --tlsv1.2 -LsSf \
-  https://github.com/12yanogden/umoria/releases/latest/download/umoria-installer.sh | sh
+  https://github.com/12yanogden/umoria-rust/releases/latest/download/umoria-installer.sh | sh
 ```
 
 ## Build locally

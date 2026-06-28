@@ -2,7 +2,7 @@
 name = "umoria"
 version = "1.0.0"
 edition = "2024"
-repository = "https://github.com/12yanogden/umoria"
+repository = "https://github.com/12yanogden/umoria-rust"
 
 [dependencies]
 anyhow = "1.0.102"
