@@ -1,0 +1,15 @@
+- name: Install build dependencies
+  shell: bash
+  run: |
+    if [ "$(uname -s)" = "Linux" ]; then
+      sudo apt-get update
+      sudo apt-get install -y cmake build-essential libncurses-dev curl
+    elif [ "$(uname -s)" = "Darwin" ]; then
+      if ! command -v cmake >/dev/null 2>&1; then
+        brew install cmake
+      fi
+    fi
+- name: Rust cache
+  uses: Swatinem/rust-cache@v2
+  with:
+    key: ${{ join(matrix.targets, '-') }}
