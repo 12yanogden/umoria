@@ -189,9 +189,13 @@ fn load(data_dir: &Path) -> Result<()> {
 
     divider();
     skip_line();
-    let labels: Vec<String> = archives.iter().map(|name| name.to_string()).collect();
-    let label_refs: Vec<&str> = labels.iter().map(String::as_str).collect();
-    let selected_index = menu(&label_refs)?;
+    let mut menu_options: Vec<String> = archives.iter().map(|name| name.to_string()).collect();
+    menu_options.push("Back".to_string());
+    let menu_refs: Vec<&str> = menu_options.iter().map(String::as_str).collect();
+    let selected_index = menu(&menu_refs)?;
+    if selected_index == archives.len() {
+        return Ok(());
+    }
     let selected_archive = archives[selected_index].clone();
 
     let marked_archive = mark_last_loaded(&archive_dir, &selected_archive)?;
